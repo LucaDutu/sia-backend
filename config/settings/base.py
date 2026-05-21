@@ -112,7 +112,7 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.AnonRateThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
-        'anon': '100/hour',
+        'anon': '2000/hour',
         'tenant': '60/minute',
     },
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -164,4 +164,4 @@ GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 # OIDC / OAuth 2.0 Configuration (para agentes externos)
 OIDC_SIGNING_KEY = os.getenv('OIDC_SIGNING_KEY', '')
 OIDC_ISSUER = os.getenv('OIDC_ISSUER', 'http://localhost:8000')
-OIDC_TOKEN_EXPIRY = 3600
+OIDC_TOKEN_EXPIRY = 28800  # 8 hours
